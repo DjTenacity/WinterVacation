@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.lovedj.studyproject.LoadingView
+        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:onClick="click"
+        android:id="@+id/loading_view"/>
+    <com.lovedj.studyproject.LoadingView2
+        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:onClick="click"
+        android:layout_marginTop="160dp"
+        android:id="@+id/loading_view2"/>
+    <TextView
+        android:id="@+id/sample_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+</RelativeLayout>
+
+
+
