@@ -11,7 +11,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
-                cppFlags ""
+                //可以捕获C/C++ 的异常
+                cppFlags "-frtti -fexceptions"
+
+                //cpu架构
+                abiFilters 'armeabi'
             }
         }
     }

@@ -3,22 +3,51 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.lovedj.studyproject.LoadingView
-        android:layout_height="150dp"
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:onClick="click"
-        android:id="@+id/loading_view"/>
-    <com.lovedj.studyproject.LoadingView2
-        android:layout_height="150dp"
-        android:layout_width="match_parent"
-        android:onClick="click"
-        android:layout_marginTop="160dp"
-        android:id="@+id/loading_view2"/>
-    <TextView
-        android:id="@+id/sample_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.lovedj.studyproject.LoadingView
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:onClick="click"
+                android:id="@+id/loading_view"/>
+            <com.lovedj.studyproject.LoadingView2
+                android:layout_height="150dp"
+                android:layout_width="match_parent"
+                android:onClick="click"
+                android:id="@+id/loading_view2"/>
+            <TextView
+                android:id="@+id/sample_text"
+                android:onClick="addLove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello World!" />
+
+            <com.lovedj.studyproject.MessageBubbleView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"/> />
+
+            <com.lovedj.studyproject.LoveLayout
+                android:id="@+id/love_layout"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"></com.lovedj.studyproject.LoveLayout>
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
 </RelativeLayout>
 
 
