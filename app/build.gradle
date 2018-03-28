@@ -15,7 +15,7 @@ android {
                 cppFlags "-frtti -fexceptions"
 
                 //cpu架构
-                abiFilters 'armeabi'
+                //abiFilters 'armeabi'
             }
         }
     }
