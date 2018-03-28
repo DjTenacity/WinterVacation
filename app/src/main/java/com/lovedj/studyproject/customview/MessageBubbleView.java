@@ -1,4 +1,4 @@
-package com.lovedj.studyproject;
+package com.lovedj.studyproject.customview;
 
 import android.content.Context;
 import android.graphics.Canvas;

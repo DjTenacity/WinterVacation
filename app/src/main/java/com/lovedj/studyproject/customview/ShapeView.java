@@ -1,4 +1,4 @@
-package com.lovedj.studyproject;
+package com.lovedj.studyproject.customview;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,6 +7,8 @@ import android.graphics.Path;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.lovedj.studyproject.R;
 
 
 public class ShapeView extends View {
@@ -44,7 +46,7 @@ public class ShapeView extends View {
             case Circle:
                 // 画圆形
                 int center = getWidth() / 2;
-                mPaint.setColor(ContextCompat.getColor(getContext(),R.color.circle));
+                mPaint.setColor(ContextCompat.getColor(getContext(), R.color.circle));
                 canvas.drawCircle(center, center, center, mPaint);
                 break;
             case Square:

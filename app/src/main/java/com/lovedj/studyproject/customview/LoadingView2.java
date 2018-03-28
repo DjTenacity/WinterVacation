@@ -1,4 +1,4 @@
-package com.lovedj.studyproject;
+package com.lovedj.studyproject.customview;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
+
+import com.lovedj.studyproject.R;
 
 /**
  * 58 加载数据动画
@@ -57,7 +59,7 @@ public class LoadingView2 extends LinearLayout{
         // addView(loadView);
         // 找一下 插件式换肤资源加载的那一节的内容
         // this 代表把 ui_loading_view 加载到 LoadingView 中
-        inflate(getContext(),R.layout.ui_loading_view,this);
+        inflate(getContext(), R.layout.ui_loading_view,this);
 
         mShapeView = (ShapeView) findViewById(R.id.shape_view);
         mShadowView = findViewById(R.id.shadow_view);

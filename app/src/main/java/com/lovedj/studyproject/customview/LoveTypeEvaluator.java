@@ -1,4 +1,4 @@
-package com.lovedj.studyproject;
+package com.lovedj.studyproject.customview;
 
 import android.animation.TypeEvaluator;
 import android.graphics.PointF;
