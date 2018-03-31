@@ -1,0 +1,38 @@
+1.文件上传，post 提交表单
+
+
+post 提交会有一定的格式：  下面是要空两行
+
+
+startBoundary + "\r\n"
+Content-Dispsotion: form-data; name = "pageSize"
+Context-Type: text/palint
+
+
+1
+startBoundary + "\r\n"
+Content-Dispsotion: form-data; name = "pageNo"
+Context-Type: text/palint
+
+
+
+1
+endBoundary
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++
+2.文件提交
+startBoundary + "\r\n"
+Content-Dispsotion: form-data; name = "file"; filename="test.png"
+Context-Type: (文件的type)
+
+
+文件的内容流
+startBoundary + "\r\n"
+Content-Dispsotion: form-data; name = "file"; filename="test.png"
+Context-Type: (文件的type)
+
+
+文件的内容流
+
