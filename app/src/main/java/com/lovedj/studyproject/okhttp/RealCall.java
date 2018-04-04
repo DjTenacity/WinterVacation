@@ -2,12 +2,20 @@ package com.lovedj.studyproject.okhttp;
 
 import android.util.Log;
 
+import com.lovedj.studyproject.okhttp.interceptor.BridgeInterceptor;
+import com.lovedj.studyproject.okhttp.interceptor.CacheInterceptor;
+import com.lovedj.studyproject.okhttp.interceptor.CallServerInterceptor;
+import com.lovedj.studyproject.okhttp.interceptor.Interceptor;
+import com.lovedj.studyproject.okhttp.interceptor.RealInterceptorChain;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.Socket;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -58,7 +66,7 @@ public class RealCall implements Call {
             //Volley xUtils Afinal  AsyHttpClient  --->  HttpURLConnection
 
             //okhttp = Socket + okio(IO)
-
+/**
             final Request request = orignalRequest;
             try {
                 URL url = new URL(request.url);
@@ -95,7 +103,7 @@ public class RealCall implements Call {
 
                 //写内容
                 if (requestBody != null) {
-                    requestBody.onWriter(urlConnection.getOutputStream());
+                    requestBody.onWriteBody(urlConnection.getOutputStream());
 
                 }
 
@@ -108,6 +116,20 @@ public class RealCall implements Call {
                     Response response = new Response(inputStream);
                     callBack.onResponse(RealCall.this, response);
                 }
+*/
+                Log.e("TAG","execute");
+                // Volley xUtils Afinal AsyHttpClient
+                // 基于 HttpUrlConnection , OkHttp = Socket + okio(IO)
+                final Request request = orignalRequest;
+                try {
+                    List<Interceptor> interceptors = new ArrayList<>();
+                    interceptors.add(new BridgeInterceptor());
+                    interceptors.add(new CacheInterceptor());
+                    interceptors.add(new CallServerInterceptor());
+                    Interceptor.Chain chain = new RealInterceptorChain(interceptors,0,orignalRequest);
+
+                    Response response = chain.proceed(request);
+                    callBack.onResponse(RealCall.this,response);
 
 
             } catch (IOException e) {

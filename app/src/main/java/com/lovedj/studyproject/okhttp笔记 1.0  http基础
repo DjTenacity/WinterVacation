@@ -44,14 +44,31 @@ TLS/SSL 协议：
 5.1 自己如果要写一个框架你要怎么处理
 
 
-1. 网络是耗时，开线程，new Thread() ?  线程池
+1. 网络是耗时，开线程，new Thread()   线程池
 2. 处理网络，HttpUrlConnection(简单) 或者  输入流+Socket(麻烦)
 3. 网络请求头信息处理，缓存的处理，文件格式上次的方式（表单提交，拼格式）
 4. 路由的一些操作，Http 2.0 复用 等等
 
 
 5.2 OkHttp 大致内容 Okio，Socket
-okio：原生的JavaIO + 自定义封装 ，其实就是对于 io 的封装
+okio：   原生的JavaIO + 自定义封装 ，其实就是对于 io 的封装,
+        io设计的类和方法太多,在这里就只有source 输入 和sink 输出,
+        只需要调用BufferSource和BufferSink就可以
+
+   try {
+      // 绑定输入输出 ，操作 Socket 的输入输出流
+      source = Okio.buffer(Okio.source(rawSocket));
+      sink = Okio.buffer(Okio.sink(rawSocket));
+    } catch (NullPointerException npe) {
+      if (NPE_THROW_WITH_NULL.equals(npe.getMessage())) {
+        throw new IOException(npe);
+      }
+    }
+
+
+        HTTPICode就是封装了source和sink就是自己的输入输出流,本质就是操作socket的输入输出流
+
+
 
 Socket 连接
 拦截器

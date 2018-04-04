@@ -44,5 +44,10 @@ public class OkHttpActivity extends AppCompatActivity {
     //涉及的类比较多 ,写出来的代码思想很重要
     //体现的调用形式打起来,把细节填好
 
+/**
+ *  OkHttpClient okHttpClient = new OkHttpClient.Builder().cache(new Cache()).build();
 
+ Request request = new Request.Builder().cacheControl(new CacheControl.Builder().noCache())
+ *
+ * */
 }

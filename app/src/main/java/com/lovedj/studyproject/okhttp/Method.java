@@ -7,7 +7,7 @@ package com.lovedj.studyproject.okhttp;
 public enum Method {
     POST("POST"), GET("GET"), HEAD("HEAD"), DELETE("DELETE"), PUT("PUT"), PATCH("PATCH");
 
-    String name;
+    public   String name;
 
 
     Method(String name) {
