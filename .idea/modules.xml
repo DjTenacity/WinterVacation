@@ -5,7 +5,6 @@
       <module fileurl="file://E:\myPro\WinterVacation\StudyProject.iml" filepath="E:\myPro\WinterVacation\StudyProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/WinterVacation.iml" filepath="$PROJECT_DIR$/WinterVacation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okhttp/okhttp.iml" filepath="$PROJECT_DIR$/okhttp/okhttp.iml" />
     </modules>
   </component>
 </project>
